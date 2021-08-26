@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
   path: "build.sh",
   keep_color: true
   config.vm.synced_folder ".", "/sync", :mount_options => ["dmode=777","fmode=666"]
-  config.vm.network :forwarded_port, host: 9999, guest: 80
+  config.vm.network :forwarded_port, host: 8080, guest: 8080
   config.vbguest.auto_update = false
   config.vm.define 'vagrant-docker-fcrepo6' do |t|
     config.vm.provider :virtualbox do |v|

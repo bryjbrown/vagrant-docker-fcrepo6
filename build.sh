@@ -22,5 +22,6 @@ apt update
 apt -y install docker-ce
 
 # Install and run fcrepo6
-docker run -d -p 80:8080 --name=fcrepo6 fcrepo/fcrepo:6.0.0
-echo "fcrepo6 running at localhost:9999/fcrepo/"
+mkdir /fcrepo-home
+docker run -d -p 8080:8080 -v /fcrepo-home:/usr/local/tomcat/fcrepo-home --name=fcrepo6 fcrepo/fcrepo:6.0.0
+echo "fcrepo6 running at localhost:8080/fcrepo/"
